@@ -67,12 +67,13 @@ Create a dataframe comprised of
 *  a character vector of length 10
 *  a factor vector of length 10, with 3 different factor “levels”
 
+Creating the dataframe
+
 ```{r setup, include=FALSE}
 # Load tidyverse library
 library(tidyverse)
 ```
 
-Creating the dataframe
 ```{r df_create}
 # Fix the random sample
 set.seed(1234)
@@ -86,6 +87,22 @@ df = tibble(
 
 df
 ```
+
+Try to take the mean of each variable in your dataframe. 
+
+```{r variable mean}
+mean(df$num)
+mean(df$logic)
+mean(df$char)
+mean(df$fact)
+```
+
+What works and what doesn’t? 
+
+
+
+
+
 
 
 
