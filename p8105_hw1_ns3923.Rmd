@@ -88,7 +88,7 @@ df = tibble(
 df
 ```
 
-Try to take the mean of each variable in your dataframe. 
+Try to take **the mean of each variable** in your dataframe. 
 
 ```{r variable mean}
 mean(df$num)
@@ -97,7 +97,10 @@ mean(df$char)
 mean(df$fact)
 ```
 
-What works and what doesn’t? 
+**What works and what doesn’t?**
+
+The mean of num and logic can be computed without issue. The numeric variable `num` behaves as expected. The logical variable `logic` also works because R interprets TRUE as 1 and FALSE as 0. In contrast, the means of `char` and `fact` cannot be calculated. Character variables are non-numeric text values, and factor variables represent categorical labels. This causes their means to be undefined in this context, since they cannot be directly converted into meaningful numeric values.
+
 
 
 
