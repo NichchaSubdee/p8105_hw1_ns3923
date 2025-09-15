@@ -38,11 +38,10 @@ The dataset has `r nrow(early_january_weather)` rows and `r ncol(early_january_w
 
 There are **15 variables**: `r names(early_january_weather)`
 
-**Some important variables**
-- `origin` = 
+The variable `origin` indicates the airport weather station. Temperature (`temp`) and dewpoint (`dewp`) are recorded in degrees Fahrenheit, with a mean temperature of **`r round(mean(early_january_weather$temp, na.rm = TRUE),2)` °F.** Other important variables include wind direction (`wind_dir`, in degrees), wind speed and gust (`wind_speed`,`wind_gust`, in mph), precipitation (`precip`, in inches), sea level pressure (`pressure`, in millibars), and date and hour of the recording (`time_hour`).
 
 
-The mean temperature (temp) is `r round(mean(early_january_weather$temp, na.rm = TRUE),2)` °F.
+
 
 
 
