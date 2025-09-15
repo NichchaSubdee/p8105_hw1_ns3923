@@ -101,7 +101,17 @@ mean(pull(df, fact))
 
 The mean of num and logic can be computed without issue. The numeric variable `num` behaves as expected. The logical variable `logic` also works because R interprets TRUE as 1 and FALSE as 0. In contrast, the means of `char` and `fact` cannot be calculated. Character variables are non-numeric text values, and factor variables represent categorical labels. This causes their means to be undefined in this context, since they cannot be directly converted into meaningful numeric values.
 
+In some cases, we can convert variables from one type to numeric by using `as.numeric` function.
 
+```{r numeric convert, eval=TRUE}
+# Convert all variables to numeric
+as.numeric(df$num)
+as.numeric(df$logic)
+as.numeric(df$char)
+as.numeric(df$fact)
+```
+
+**What happens, and why? Does this help explain what happens when you try to take the mean?**
 
 
 
