@@ -4,6 +4,13 @@ author: Nichcha Subdee (ns3923)
 output: github_document
 ---
 
+## Problem 1
+This problem uses inline R, plotting, and shows how `ggplot` behaves with different variable types. I first load the necessary packages.
+
+```{r, message=FALSE}
+library(moderndive)
+library(ggplot2)
+```
 
 
 
