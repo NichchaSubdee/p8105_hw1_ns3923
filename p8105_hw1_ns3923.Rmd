@@ -90,7 +90,7 @@ df
 
 Try to take **the mean of each variable** in your dataframe. 
 
-```{r variable mean}
+```{r variable_mean, error=TRUE}
 mean(pull(df, num))
 mean(pull(df, logic))
 mean(pull(df, char))
@@ -99,11 +99,11 @@ mean(pull(df, fact))
 
 **What works and what doesn’t?**
 
-The mean of num and logic can be computed without issue. The numeric variable `num` behaves as expected. The logical variable `logic` also works because R interprets TRUE as 1 and FALSE as 0. In contrast, the means of `char` and `fact` cannot be calculated. Character variables are non-numeric text values, and factor variables represent categorical labels. This causes their means to be undefined in this context, since they cannot be directly converted into meaningful numeric values.
+The mean of num and logic can be computed without issue. The numeric variable `num` behaves as expected. The logical variable `logic` also works because R interprets TRUE as 1 and FALSE as 0. In contrast, the means of `char` and `fact` cannot be calculated. Character variables are non-numeric text values, and factor variables represent categorical labels. This causes their means to be undefined (`NA`) in this context, since they cannot be directly converted into meaningful numeric values.
 
-In some cases, we can convert variables from one type to numeric by using `as.numeric` function.
+In some cases, variables can be converted to numeric form using the `as.numeric` function.
 
-```{r numeric convert, eval=TRUE}
+```{r numeric convert, eval=FALSE}
 # Convert all variables to numeric
 as.numeric(df$num)
 as.numeric(df$logic)
@@ -111,8 +111,17 @@ as.numeric(df$char)
 as.numeric(df$fact)
 ```
 
-**What happens, and why? Does this help explain what happens when you try to take the mean?**
+**What happens, and why?** 
 
+* `num`: shows the original 10 numeric values, no change since it is already numeric.
+* `logic`: shows 1 for `TRUE` and 0 for `FALSE`, so the mean can be taken as a proportion.
+* `char`: shows only `NA` with a warning because text cannot be turned into numbers.
+* `fact`: shows the numeric codes of the factor levels
+  * `low` = 1, `medium` = 2, and `high` = 3.
+
+**Does this help explain what happens when you try to take the mean?**
+
+Yes. Because `num` and `logic` have numeric values, the mean can be calculated. In contrast, `char` and `fact` do not have meaningful numeric values, so the mean is not defined.
 
 
 
