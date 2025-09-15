@@ -12,7 +12,7 @@ library(moderndive)
 library(ggplot2)
 ```
 
-Then, we will load the `early_january_weather` dataset for further analysis.
+Then, we will load the `early_january_weather` dataset, which contains hourly meteorological data for LGA, JFK, and EWR for January 2013.
 
 ```{r}
 data("early_january_weather")
@@ -32,6 +32,17 @@ ncol(early_january_weather)
 # The mean temperature in 2 decimal points
 round(mean(early_january_weather$temp, na.rm = TRUE),2)
 ```
+**Discussion**
+
+The dataset has `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.  
+
+There are **15 variables**: `r names(early_january_weather)`
+
+**Some important variables**
+- `origin` = 
+
+
+The mean temperature (temp) is `r round(mean(early_january_weather$temp, na.rm = TRUE),2)` °F.
 
 
 
