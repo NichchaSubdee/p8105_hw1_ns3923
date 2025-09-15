@@ -38,10 +38,25 @@ The dataset has `r nrow(early_january_weather)` rows and `r ncol(early_january_w
 
 There are **15 variables**: `r names(early_january_weather)`
 
-The variable `origin` indicates the airport weather station. Temperature (`temp`) and dewpoint (`dewp`) are recorded in degrees Fahrenheit, with a mean temperature of **`r round(mean(early_january_weather$temp, na.rm = TRUE),2)` °F.** Other important variables include wind direction (`wind_dir`, in degrees), wind speed and gust (`wind_speed`,`wind_gust`, in mph), precipitation (`precip`, in inches), sea level pressure (`pressure`, in millibars), and date and hour of the recording (`time_hour`).
+The variable `origin` indicates the airport weather station. Temperature (`temp`) and dewpoint (`dewp`) are recorded in degrees Fahrenheit, with a mean temperature of **`r round(mean(early_january_weather$temp, na.rm = TRUE),2)` °F.** Other important variables include relative humidity (`humid`), wind direction (`wind_dir`, in degrees), wind speed and gust (`wind_speed`,`wind_gust`, in mph), precipitation (`precip`, in inches), sea level pressure (`pressure`, in millibars), and date and hour of the recording (`time_hour`).
 
+Next, we will create a scatterplot of temp (y) vs time_hour (x) by using code as follow.
 
+```{r}
+# Create scatterplot
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
+  geom_point()
 
+```
+
+**Scatterplot explanation**
+The scatterplot shows that temperature fluctuates over time in early January 2013. The color scale shows humidity, which is generally higher when temperatures are lower.
+
+We can export the plot by using the following code
+```{r, eval=FALSE}
+# Save plot
+ggsave("scatterplot_temp_time_hour.png")
+```
 
 
 
