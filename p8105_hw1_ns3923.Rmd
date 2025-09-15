@@ -91,10 +91,10 @@ df
 Try to take **the mean of each variable** in your dataframe. 
 
 ```{r variable mean}
-mean(df$num)
-mean(df$logic)
-mean(df$char)
-mean(df$fact)
+mean(pull(df, num))
+mean(pull(df, logic))
+mean(pull(df, char))
+mean(pull(df, fact))
 ```
 
 **What works and what doesn’t?**
