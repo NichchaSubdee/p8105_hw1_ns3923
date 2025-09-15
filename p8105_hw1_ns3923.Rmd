@@ -49,7 +49,7 @@ ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
 
 ```
 
-**Scatterplot explanation**
+**Scatterplot explanation**:
 The scatterplot shows that temperature fluctuates over time in early January 2013. The color scale shows humidity, which is generally higher when temperatures are lower.
 
 We can export the plot by using the following code
@@ -57,6 +57,16 @@ We can export the plot by using the following code
 # Save plot
 ggsave("scatterplot_temp_time_hour.png")
 ```
+
+## Problem 2
+Create a data frame comprised of 
+
+*  a random sample of size 10 from a standard Normal distribution
+*  a logical vector indicating whether elements of the sample are greater than 0
+*  a character vector of length 10
+*  a factor vector of length 10, with 3 different factor “levels”
+
+
 
 
 
