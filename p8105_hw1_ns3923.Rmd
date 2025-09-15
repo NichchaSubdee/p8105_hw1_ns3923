@@ -1,0 +1,17 @@
+---
+title: "p8105_hw1_ns3923"
+author: Nichcha Subdee (ns3923)
+output: github_document
+---
+
+
+
+
+
+
+
+
+
+
+
+
